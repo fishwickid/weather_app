@@ -1,39 +1,59 @@
 $(document).ready()
 
+// Function to start user has typed their city in to the search bar
+
 function citySearch() {
 
     event.preventDefault();
     $(".uvIndex").empty();
 
+
     var currentSearchCity = ($("#current-search-city").val());
+
     // query URL and custom API KEY variable for current day weather 
     const queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + currentSearchCity + "&units=metric&appid=82c89536a936fdf2b3461ac6bec2669f";
+   
     //ajax "get" method for the JSON object
     $.get({
         url: queryURL,
     }).then(function (response) {
+
+    // apply cont variables to the data collected from the API
         const cityName = response.name;
         const cityTemp = response.main.temp;
         const cityHumidity = response.main.humidity;
         const cityWindSpeed = response.wind.speed;
         const cityIcon = response.weather[0].icon;
+
+    // assign fetched data to HTML id
         $("#city-date").text(moment().format('MMMM Do YYYY'))
         $("#city-name").text(cityName)
         $("#city-icon").attr("src", "https://openweathermap.org/img/w/" + cityIcon + ".png")
         $("#city-temp").text("Temperature:" + cityTemp.toFixed(1) + "°C")
         $("#city-humidity").text("Humidity: " + cityHumidity + "%")
         $("#city-wind").text("Wind Speed: " + cityWindSpeed.toFixed(2) + "KPH")
+
+
+    // Apply latitude and longitude data to collect UV rating for city location
         var lon = response.coord.lon;
         var lat = response.coord.lat;
         var uvIndexURL = "https://api.openweathermap.org/data/2.5/uvi?appid=82c89536a936fdf2b3461ac6bec2669f&lat=" + lat + "&lon=" + lon + "&cnt=1";
+       
+    // Get request for UV information
         $.ajax({
             url: uvIndexURL,
             method: "GET"
         }).then(function (response) {
             var uvIndFinal = response.value;
             $(".uvIndex").append("UV Index: ");
+
+        // create button to display the UV data
             var uvBtn = $("<button>").text(uvIndFinal);
+
+        // append result to that button
             $(".uvIndex").append(uvBtn);
+
+        // If else statements to change colour depending on UV rating
             if (uvIndFinal <= 2) {
                 // If LON&LAT is 2 or less, make Green
                 uvBtn.attr("class", "uvGreen");
@@ -51,11 +71,14 @@ function citySearch() {
                 uvBtn.attr("class", "uvPurple");
             }
 
+        // Create API Get request for the 5 day forecast
             var getForecastURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=metric&appid=82c89536a936fdf2b3461ac6bec2669f";
             $.ajax({
                 url: getForecastURL,
                 method: "GET"
             }).then(function (response) {
+
+        // create variables to add required info for each day
 
                 var cityTemp1 = response.daily[1].temp.day
                 var cityTemp2 = response.daily[2].temp.day
@@ -72,6 +95,8 @@ function citySearch() {
                 var cityIcon3 = response.daily[3].weather[0].icon
                 var cityIcon4 = response.daily[4].weather[0].icon
                 var cityIcon5 = response.daily[5].weather[0].icon
+
+        // Add API data to HTML display on page 
                 $("#city-date1").text(moment().add(1, "d").format('D [/] M [/] YY'))
                 $("#city-icon1").attr("src", "https://openweathermap.org/img/w/" + cityIcon1 + ".png")
                 $("#city-temp1").text("Temperature: " + cityTemp1.toFixed(1) + "°C")
@@ -96,18 +121,23 @@ function citySearch() {
         })
     });
 }
+
+// Event listener which adds searched items to the recent searches list
 $("#btnSearch").on("click", citySearch)
 let city = "";
 let search_history = JSON.parse(localStorage.getItem("cities")) === null ? [] : JSON.parse(localStorage.getItem("cities"));
+
 //Keep city searached by the guests
 var keepCities = [];
 var displayCity = $("#recent-searches");
 var searchButton = $("#btnSearch");
 var cityInput = $("#current-search-city");
+
 // Function for displaying city names 
 function renderCityNames() {
     displayCity.innerHTML = "";
     $("li").empty()
+
     // Render a new city for each search
     for (var i = 0; i < keepCities.length; i++) {
         var keepCity = keepCities[i];
@@ -115,7 +145,7 @@ function renderCityNames() {
         li.text(keepCities[i]);
         li.attr("data-index", i);
         var button = $("<p>");
-        //button.text("City Searched");
+    //button.text("City Searched");
         li.append(button);
         displayCity.append(li);
     }
