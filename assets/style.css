@@ -1,3 +1,14 @@
+body {
+    font-size: 16px;
+    font-family: Tahoma;
+}
+li { 
+    list-style-type: none;
+  }
+h4 {
+    font-weight: bold;
+    padding-top: 40px;
+}
 .jumbotron {
     color: rgb(212, 216, 231);
     text-align: center;
@@ -5,12 +16,15 @@
     background-image: url('https://s17736.pcdn.co/wp-content/uploads/2019/03/jason-leung-479251-unsplash-1024x683.jpg');
 }
 #btnSearch {
-    background-color: blue;
+    background-color: #017A91;
     color: white;
 }
 #clear-all {
-    background-color: blue;
+    background-color: #017A91;
     color: white;
+}
+#five-day-forecast {
+    padding-top: 80px;
 }
 .uvGreen {
     background-color: green;
@@ -24,11 +38,11 @@
     background-color: orange;
     color: black;
 }
-.uvOrange {
+.uvRed {
     background-color: red;
     color: black;
 }
 .uvPurple {
     background-color: purple;
-    color: black;
+    color: white;
 }
