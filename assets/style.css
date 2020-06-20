@@ -1,0 +1,34 @@
+.jumbotron {
+    color: rgb(212, 216, 231);
+    text-align: center;
+    align-items: center;
+    background-image: url('https://s17736.pcdn.co/wp-content/uploads/2019/03/jason-leung-479251-unsplash-1024x683.jpg');
+}
+#btnSearch {
+    background-color: blue;
+    color: white;
+}
+#clear-all {
+    background-color: blue;
+    color: white;
+}
+.uvGreen {
+    background-color: green;
+    color: black;
+}
+.uvYellow {
+    background-color: yellow;
+    color: black;
+}
+.uvOrange {
+    background-color: orange;
+    color: black;
+}
+.uvOrange {
+    background-color: red;
+    color: black;
+}
+.uvPurple {
+    background-color: purple;
+    color: black;
+}
