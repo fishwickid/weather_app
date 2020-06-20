@@ -12,16 +12,19 @@
     padding-top: 120px;
     padding-bottom: 120px;
     margin-bottom: 40px;
+    margin-top: -25px;
 }
 
 body {
     font-size: 16px;
     font-family: Tahoma;
 }
+
 li { 
     list-style-type: none;
   }
-h4 {
+  
+  h4 {
     font-weight: bold;
     padding-top: 40px;
 }
@@ -36,6 +39,7 @@ h4 {
     background-color: #017A91;
     color: white;
 }
+
 #clear-all {
     background-color: #017A91;
     color: white;
