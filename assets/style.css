@@ -25,13 +25,13 @@ h4 {
     font-weight: bold;
     padding-top: 40px;
 }
-.jumbotron {
+/* .jumbotron {
     color: rgb(255, 255, 255);
     background-color: rgba(58, 56, 56, 0.646);
     background-image: url('https://cdn.cnn.com/cnnnext/dam/assets/200424080700-hubble-30th-anniversary-image-exlarge-169.jpg');
     text-align: center;
     align-items: center;
-}
+} */
 #btnSearch {
     background-color: #017A91;
     color: white;
