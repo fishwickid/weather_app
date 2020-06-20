@@ -7,7 +7,6 @@
   ​
   <title>Weather Dashboard</title>
   <!-- Bootstrap core CSS -->
-  <!-- <link rel="stylesheet" href="assets/reset.css">​ -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/style.css">
@@ -19,13 +18,13 @@
   <body class="bg-light">
     ​
     <!-- Main Bootstrap Search -->
-    <div class="container">
+    
       ​
       <!-- Jumbotron for Title -->
-      <div class="jumbotron">
+      <div class="jumbotron jumbotron-fluid" id="infoSection">
         <h1 class="text-center">
           <strong>
-            <i class="fa fa-newspaper-o"></i> Weather Dashboard
+            <i class="fa fa-newspaper-o"></i>WEATHER  FORECASTER
           </strong>
         </h1>
       </div>
@@ -35,7 +34,7 @@
         <div class="row">
           <div class="col-4">
             <div class="form-group">
-              <label for="search">Search City</label>
+              <label for="search">Type in your city of choice</label>
               <input type="text" class="form-control" id="current-search-city">
             </div>
             ​<button type="submit" class="btn btn-default" id="btnSearch"> <i class="fa fa-trash"></i> Search</button>

@@ -1,3 +1,19 @@
+#infoSection {
+    background-color: rgba(15, 15, 42, 0.485);
+    font-size: 30;
+    background-image:url(http://s3.favim.com/orig/160113/alien-art-cartoon-earth-Favim.com-3880523.jpg);
+    background-size:cover;
+    box-shadow:inset 0 0 0 2000px rgba(31, 177, 187, 0.3);
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 10px;
+    color: rgb(255, 255, 255);
+    text-shadow: black 1px 1px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    margin-bottom: 40px;
+}
+
 body {
     font-size: 16px;
     font-family: Tahoma;
@@ -10,10 +26,11 @@ h4 {
     padding-top: 40px;
 }
 .jumbotron {
-    color: rgb(212, 216, 231);
+    color: rgb(255, 255, 255);
+    background-color: rgba(58, 56, 56, 0.646);
+    background-image: url('https://cdn.cnn.com/cnnnext/dam/assets/200424080700-hubble-30th-anniversary-image-exlarge-169.jpg');
     text-align: center;
     align-items: center;
-    background-image: url('https://s17736.pcdn.co/wp-content/uploads/2019/03/jason-leung-479251-unsplash-1024x683.jpg');
 }
 #btnSearch {
     background-color: #017A91;
