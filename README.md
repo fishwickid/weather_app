@@ -14,5 +14,5 @@ Below the current temperature you can also see the 5 day forecast including the 
 
 This whole app was created using a Bootsrtrap framework for the front end design and Jquery to create all of the interactive behaviour. 
 
-Experience it for yourself: 
+Experience it for yourself: https://fishwickid.github.io/weather_app/
 
